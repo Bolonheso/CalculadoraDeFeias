@@ -1,9 +1,9 @@
-import PySimpleGUI as sg
-
 class Participante:
-    nome = str()
-    dias = list()
-    pagou = float()
+    def __init__(self, id, nome, dias, pagou):
+        self.id = id
+        self.nome = nome
+        self.dias = dias
+        self.pagou = pagou
 
     def addDias(self, *dias):
         for dia in dias:
@@ -19,10 +19,10 @@ class Participante:
         self.pagou = val
 
 class Familia:
-    partsList = list()
-    
-    def __init__(self, pagante):
+    def __init__(self, id, pagante, partsList):
+        self.id = id
         self.pagante = pagante
+        self.partsList = partsList
 
     def DEFpagante(self, pag):
         self.pagante = pag
